@@ -1,0 +1,1336 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="practica1.html">
+      
+      
+        <link rel="next" href="comandos-git.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Introducción a Spring Boot - Prácticas MADS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-spring-boot" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Prácticas MADS" class="md-header__button md-logo" aria-label="Prácticas MADS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Prácticas MADS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción a Spring Boot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Prácticas MADS" class="md-nav__button md-logo" aria-label="Prácticas MADS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Prácticas MADS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Práctica 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Práctica 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enunciado de la práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introducción a Spring Boot
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="intro-spring-boot.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Spring Boot
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-aplicacion-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Aplicación ejemplo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejecucion-de-aplicaciones-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ejecución de aplicaciones Spring Boot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-desarrollo-y-ejecucion-con-intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Desarrollo y ejecución con IntelliJ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Desarrollo y ejecución con IntelliJ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Copilot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conceptos-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Conceptos de Spring Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conceptos de Spring Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clases de Servicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inyeccion-de-dependencias-en-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inyección de dependencias en Spring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-thymeleaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas Thymeleaf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formularios-y-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularios y validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Referencias
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comandos-git.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resumen de comandos Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-aplicacion-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Aplicación ejemplo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejecucion-de-aplicaciones-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ejecución de aplicaciones Spring Boot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-desarrollo-y-ejecucion-con-intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Desarrollo y ejecución con IntelliJ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Desarrollo y ejecución con IntelliJ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Copilot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conceptos-de-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Conceptos de Spring Boot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conceptos de Spring Boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de la aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controladores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clases de Servicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inyeccion-de-dependencias-en-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inyección de dependencias en Spring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-thymeleaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas Thymeleaf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formularios-y-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularios y validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Referencias
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="introduccion-a-spring-boot">Introducción a Spring Boot<a class="headerlink" href="#introduccion-a-spring-boot" title="Permanent link">&para;</a></h1>
+<p>Vamos a trabajar con la versión 2.7.14 de Spring Boot. Se puede
+consultar toda la documentación oficial sobre esta versión en <a href="https://docs.spring.io/spring-boot/docs/2.7.14/reference/html/index.html">este
+enlace</a>. </p>
+<h2 id="1-aplicacion-ejemplo">1. Aplicación ejemplo<a class="headerlink" href="#1-aplicacion-ejemplo" title="Permanent link">&para;</a></h2>
+<p>Es muy sencillo crear aplicaciones de Spring Boot <strong>desde cero</strong> usando la
+web <a href="https://start.spring.io">Spring initializr</a>. En esa página puedes
+configurar los metadatos del proyecto y sus dependencias y descargar
+el proyecto como un ZIP con la estructura de directorios y el POM
+ya configurados. </p>
+<p>Nosotros vamos a hacerlo más fácil todavía usando una aplicación
+ejemplo en GitHub
+<a href="https://github.com/domingogallardo/spring-boot-demoapp">domingogallardo/spring-boot-demoapp</a>. </p>
+<p>La aplicación es un sencillo <code>Hola mundo</code>. En los siguientes apartados
+explicamos cómo lanzarla y cómo funciona.</p>
+<h2 id="2-ejecucion-de-aplicaciones-spring-boot">2. Ejecución de aplicaciones Spring Boot<a class="headerlink" href="#2-ejecucion-de-aplicaciones-spring-boot" title="Permanent link">&para;</a></h2>
+<p>Spring Boot permite ejecutar aplicaciones Spring de forma
+<em>standalone</em>, sin necesidad de un servidor de aplicaciones. Una
+aplicación Spring Boot lleva incluido un servidor web embebido
+(Tomcat) que se pone en marcha al lanzar la aplicación y sirve todas
+las páginas de la aplicación web.</p>
+<p>Para lanzar una aplicación Spring Boot es suficiente tener instalados:</p>
+<ul>
+<li>JDK Java (8 en adelante)</li>
+<li>Maven</li>
+</ul>
+<p>Maven incluso no es necesario si la aplicación Spring Boot lo tiene ya
+instalado utilizando <a href="https://github.com/apache/maven-wrapper">Maven
+Wrapper</a>, como es el caso de
+la aplicación ejemplo.</p>
+<p>Desde el directorio donde está la aplicación que queremos lanzar
+podemos arrancarla como una aplicación Java. Podemos llamar a <code>mvn</code> si
+tenemos instalado Maven o a <code>./mvnw</code> para usar Maven Wrapper:</p>
+<div class="highlight"><pre><span></span><code>$ ./mvnw package
+$ java -jar target/demoapp-0.0.1-SNAPSHOT.jar 
+</code></pre></div>
+<p>También podemos lanzarla usando el plugin <code>spring-boot</code> de Maven:</p>
+<div class="highlight"><pre><span></span><code>$ ./mvnw spring-boot:run
+</code></pre></div>
+<p>La aplicación se arranca por defecto en el puerto local 8080. Una vez
+arrancada la aplicación podemos conectarnos desde un navegador a sus
+páginas de inicio.</p>
+<p>En el caso de la aplicación demo descargada, podemos probar las
+siguientes páginas:</p>
+<ul>
+<li><a href="http://localhost:8080">http://localhost:8080</a></li>
+<li><a href="http://localhost:8080/saludo/Pepito">http://localhost:8080/saludo/Pepito</a></li>
+<li><a href="http://localhost:8080/saludoplantilla/Pepito">http://localhost:8080/saludoplantilla/Pepito</a></li>
+<li><a href="http://localhost:8080/saludoform">http://localhost:8080/saludoform</a></li>
+</ul>
+<h2 id="3-desarrollo-y-ejecucion-con-intellij">3. Desarrollo y ejecución con IntelliJ<a class="headerlink" href="#3-desarrollo-y-ejecucion-con-intellij" title="Permanent link">&para;</a></h2>
+<p>Recomendamos hacer el desarrollo usando el IDE <a href="https://www.jetbrains.com/idea/download/">IntelliJ
+Ultimate</a>. Aunque es de
+pago, es posible <a href="https://www.jetbrains.com/shop/eform/students">obtener una licencia de
+estudiante</a> usando la
+dirección de correo de la UA.</p>
+<p>Para abrir un proyecto Spring Boot en IntelliJ basta con
+abrir el directorio donde se encuentre el fichero <code>pom.xml</code>. Se
+puede hacer desde la pantalla de bienvenida de IntelliJ con la opción
+<strong>Open</strong> o usando la opción <strong>File &gt; Open"</strong> o <strong>"File &gt; New &gt; Project from
+Existing Sources</strong>. </p>
+<p>IntelliJ abre el proyecto correctamente:</p>
+<p><img src="imagenes/proyecto-desplegado.png" width="350px"/></p>
+<p>Podemos ejecutarlo abriendo un terminal y lanzándolo con Maven. O
+también desde la <strong>configuración de Run</strong> que ha creado IntelliJ al
+realizar la importación:</p>
+<p><img src="imagenes/configuracion-run.png" width="250px"/></p>
+<p>Se abrirá un panel de ejecución desde el que se puede parar la
+aplicación, volverla a lanzar, etc:</p>
+<p><img src="imagenes/panel-ejecucion.png" width="900px"/></p>
+<h3 id="github-copilot">GitHub Copilot<a class="headerlink" href="#github-copilot" title="Permanent link">&para;</a></h3>
+<p>Es recomendable instalar el <a href="https://plugins.jetbrains.com/plugin/17718-github-copilot">plugin GithHub
+Copilot para JetBrains</a> para
+trabajar con este asistente de IA como ayudante de código. Tras instalar el
+plugin deberás activarlo introduciendo tu usuario de GitHub.</p>
+<p>Puedes trabajar de forma gratuita con <a href="https://github.com/features/copilot/">GitHub
+Copilot</a> dándote de alta en el <a href="https://education.github.com/pack">GitHub
+Student Developer Pack</a>.</p>
+<h2 id="4-conceptos-de-spring-boot">4. Conceptos de Spring Boot<a class="headerlink" href="#4-conceptos-de-spring-boot" title="Permanent link">&para;</a></h2>
+<h3 id="estructura-de-la-aplicacion">Estructura de la aplicación<a class="headerlink" href="#estructura-de-la-aplicacion" title="Permanent link">&para;</a></h3>
+<p>Estructura de directorios típica de los proyectos Java construidos con
+Maven:</p>
+<p><img src="imagenes/proyecto-desplegado.png" width="350px"/></p>
+<p>El fichero <code>pom.xml</code> declara las dependencias. Spring Boot proporciona
+<em>starters</em> que agrupan un conjunto de dependencias comunes.</p>
+<p><strong>Fichero <code>pom.xml</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0</span>
+<span class="s">         https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>es.ua.mads<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>demoapp<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>demoapp<span class="nt">&lt;/name&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;parent&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>2.6.10<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/parent&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;java.version&gt;</span>1.8<span class="nt">&lt;/java.version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-validation<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-test<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;argLine&gt;</span>-Dfile.encoding=UTF8<span class="nt">&lt;/argLine&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+<p>En el panel de Maven de IntelliJ se puede consultar las librerías concretas que
+se han descargado:</p>
+<p><img src="imagenes/dependencias-maven.png" width="600px"/></p>
+<p>En el fichero de configuración de la aplicación se definen propiedades
+que configuran distintos aspectos de la misma, como la base de datos
+con la que se va a trabajar o el puerto en el que debe
+ejecutarse. Conforme necesitemos configurar estas propiedades iremos
+añadiendo elementos al fichero.</p>
+<p><strong>Fichero <code>resources/application.properties</code></strong></p>
+<div class="highlight"><pre><span></span><code>spring.application.name = demoapp
+</code></pre></div>
+<h3 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">&para;</a></h3>
+<p>Los controladores definen el código a ejecutar como respuesta a una
+petición HTTP. Son clases que se suelen colocar en el paquete
+<code>controller</code> y están anotadas con <code>@Controller</code>.</p>
+<p>Vemos un ejemplo en la clase <code>SaludoController</code>.</p>
+<p><strong>Fichero <code>src/main/java/demoapp/controller/SaludoController.java</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp.controller</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">demoapp.service.SaludoService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.ResponseBody</span><span class="p">;</span>
+
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoController</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/saludo/{nombre}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nd">@ResponseBody</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">saludo</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>Los métodos en los que se definen las respuestas a las peticiones HTTP
+están anotados con anotaciones en las que se indica el tipo de
+petición y la URL a la que se responde.</p>
+<p>Por ejemplo, en la clase anterior el método <code>saludo</code> contesta a las
+peticiones dirigida a la URL <code>/saludo/Ana</code>. La cadena <code>Ana</code> en la URL
+es decodificada y pasada en el parámetro <code>nombre</code> al método.</p>
+<p>El método devuelve la respuesta HTTP. La anotación <code>@ResponseBody</code>
+construye automáticamente esta respuesta, añadiendo como contenido de
+la misma la cadena devuelta por el servicio. </p>
+<p>En este caso la respuesta es:</p>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 8
+Date: Mon, 02 Sep 2019 14:59:04 GMT
+
+Hola Ana
+</code></pre></div>
+<h3 id="clases-de-servicio">Clases de Servicio<a class="headerlink" href="#clases-de-servicio" title="Permanent link">&para;</a></h3>
+<p>Es recomendable definir clases de servicio en las que se implementa la
+lógica de negocio de la aplicación. Las clases <em>controller</em> llaman a las
+clases servicio, que son las que realmente realizan todo el
+procesamiento.</p>
+<p>De esta forma se separan las responsabilidades. Las clases <em>controller</em>
+se encargan de procesar las peticiones y las respuestas HTTP y las
+clases de servicio son las que realmente realizan la lógica de negocio
+y devuelven el contenido de las respuestas. Si en algún momento hay
+que añadir una nueva capa de presentación en la que, por ejemplo, se
+trabaje con objetos JSON, no será necesario cambiar la capa de
+servicios, sólo añadir nuevas clases <em>controller</em>.</p>
+<p>La separación de la lógica de negocio en las clases de servicio
+permite también realizar tests que trabajan sobre objetos Java,
+independientes de los formatos de entrada/salida manejados por los
+controladores. </p>
+<p><strong>Fichero <code>src/main/java/demoapp/service/SaludoService.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp.service</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">saluda</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hola &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="inyeccion-de-dependencias-en-spring">Inyección de dependencias en Spring<a class="headerlink" href="#inyeccion-de-dependencias-en-spring" title="Permanent link">&para;</a></h3>
+<p>Spring Boot utiliza la anotación <code>@Autowired</code> para inyectar en la
+variable anotada un objeto nuevo del tipo indicado. Se puede definir
+la anotación en la variable o en el constructor de la clase. Hemos
+utilizado la anotación en las variables de instancia.</p>
+<p>En los ejemplos anteriores podemos comprobar estas anotaciones. En la
+aplicación ejemplo se define un controlador y un servicio que devuelve
+un saludo. El servicio se anota con la anotación <code>@Service</code> y esta
+anotación le indica a Spring Boot que la clase que va a poder ser
+inyectada.</p>
+<p>En el controlador se necesita instanciar un objeto de la clase
+<code>SaludoService</code> y se hace usando inyección de dependencias. Spring
+Boot se encarga de obtener una instancia y de inyectarla en la
+variable cuando se inicializa el controlador. Lo vemos en el siguiente código:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoController</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/saludo/{nombre}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nd">@ResponseBody</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">saludo</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>Mediante la inyección de dependencias el código es más flexible y es
+más fácil de testear, pudiéndose definir <em>mocks</em> que sustituyen los
+objetos inyectados.</p>
+<p>Más información en la documentación de Spring Boot <a href="https://docs.spring.io/spring-boot/docs/2.1.16.RELEASE/reference/htmlsingle/#using-boot-spring-beans-and-dependency-injection">Spring Beans and Dependency Injection</a>.</p>
+<h4 id="alcance-de-los-objetos-inyectados">Alcance de los objetos inyectados<a class="headerlink" href="#alcance-de-los-objetos-inyectados" title="Permanent link">&para;</a></h4>
+<p>Por defecto el alcance (<em>scope</em>) de todas las anotaciones de Spring (<code>@service</code>,
+<code>@controller</code>, <code>@component</code>, etc.) es un <em>Singleton</em>. Existe una única
+instancia de ese objeto que es la que se inyecta en las variables.</p>
+<p>Al estar funcionando en una aplicación web, el <em>singleton</em> que hace de
+controlador recibirá múltiples peticiones concurrentemente. Cada
+petición irá en su propio hilo de Java, por lo que múltiples hilos
+podrán estar ejecutando el mismo código del controlador. </p>
+<p>Por ello hay que tener cuidado en <strong>no definir variables de instancia
+mutables (con estado)</strong> dentro del controlador (con excepción de los
+objetos inyectados con la anotación <code>@Autowired</code>), porque podrían
+producirse errores debidos a condiciones de carrera (un hilo modifica
+la misma variable que otro está leyendo). Es conveniente que todos los
+<em>beans</em> (controladores, servicios, etc.) sean objetos sin estado.</p>
+<p>También es posible definir otros alcances, como <code>@RequestScope</code> o
+<code>@SessionScope</code>. En el primer caso se crea una instancia nueva del
+objeto para cada petición HTTP y en el segundo se crea una instancia
+nueva en cada sesión HTTP.</p>
+<p>Puedes encontrar más información y ejemplos en <a href="https://www.baeldung.com/spring-bean-scopes">este enlace</a>.</p>
+<h3 id="plantillas-thymeleaf">Plantillas Thymeleaf<a class="headerlink" href="#plantillas-thymeleaf" title="Permanent link">&para;</a></h3>
+<p>Las páginas HTML devueltas se pueden construir
+utilizando un lenguaje de plantillas con el framework
+<a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">Thymeleaf</a>. Las
+plantillas thymeleaf son páginas HTML en las que se introducen objetos
+Java pasados por los controllers.</p>
+<p>Las plantillas se incluyen en el directorio <code>resources/templates</code>.</p>
+<p>Por ejemplo, el siguiente fichero es una sencilla plantilla que
+muestra un saludo. El objeto <code>mensaje</code> es una cadena que se pasa desde
+el controller.</p>
+<p><strong>Fichero <code>src/main/resources/templates/saludo.html</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;&#39;Saludo: &#39; + ${mensaje}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El controller construye la vista devolviendo el nombre de la
+plantilla. Y pasa a la plantilla los objetos a mostrar usando un
+diccionario (la variable <code>model</code> que recibe como parámetro):</p>
+<p><strong>Fichero <code>src/main/java/demoapp/controller/SaludoControllerPlantilla.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp.controller</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">demoapp.service.SaludoService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.ui.Model</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="p">;</span>
+
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoControllerPlantilla</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/saludoplantilla/{nombre}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">saludo</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;nombre&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                                       </span><span class="n">Model</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Se añade la respuesta a la clave &#39;mensaje&#39; que se usa</span>
+<span class="w">        </span><span class="c1">// en la plantilla</span>
+<span class="w">        </span><span class="n">model</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;mensaje&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">));</span>
+<span class="w">        </span><span class="c1">// Se llama a la plantilla &#39;saludo.html&#39;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;saludo&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="formularios-y-validacion">Formularios y validación<a class="headerlink" href="#formularios-y-validacion" title="Permanent link">&para;</a></h3>
+<p>Spring Boor simplifica la declaración y validación de formularios
+usando clases Java que trabajan como modelos del formulario. Por
+ejemplo, en la aplicación se define la clase <code>UserData</code>:</p>
+<p><strong>Fichero <code>src/main/java/demoapp/controller/UserData.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp.controller</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.validation.constraints.Size</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Size</span><span class="p">(</span><span class="n">min</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNombre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Se trata de un objeto con el campo <code>nombre</code> de tipo <code>String</code> al que se
+le ha añadido una anotación de validación <code>@Size</code> con el tamaño mínimo y
+máximo que debe tener.</p>
+<p>Puedes encontrar más información sobre otros atributos de validación
+en <a href="https://www.baeldung.com/javax-validation">este enlace</a>.</p>
+<p>El formulario HTML propiamente dicho se define con una plantilla
+thymeleaf en la que se declara un objeto que tiene el mismo nombre que
+el nombre de la clase modelo, pero con la primera letra en
+minúscula. En nuestro caso la clase modelo es <code>UserData</code>, por lo que el objeto
+del formulario debe llamarse <code>userData</code>. En el formulario podemos usar
+cualquier campo definido en el objeto modelo. En nuestro caso usamos
+el único campo de tipo <code>String</code>, <code>nombre</code>.</p>
+<p><strong>Fichero <code>src/main/resources/templates/formRegistro.html</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">th:action</span><span class="o">=</span><span class="s">&quot;@{/saludoform}&quot;</span> <span class="na">th:object</span><span class="o">=</span><span class="s">&quot;${userData}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nombre:<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">th:field</span><span class="o">=</span><span class="s">&quot;*{nombre}&quot;</span> <span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span> <span class="na">th:if</span><span class="o">=</span><span class="s">&quot;${#fields.hasErrors(&#39;nombre&#39;)}&quot;</span> <span class="na">th:errors</span><span class="o">=</span><span class="s">&quot;*{nombre}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Se define una acción que enviará una petición <code>POST</code> a la URL
+<code>/saludoform</code> con los datos del formulario. En este caso el nombre.</p>
+<p>Por último, el controller que lanza el formulario y el que recibe la
+petición <code>POST</code> con los datos introducidos se definen en el siguiente
+fichero:</p>
+<p><strong>Fichero <code>src/main/java/demoapp/controller/SaludoControllerForm.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp.controller</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">demoapp.service.SaludoService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.ui.Model</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.validation.BindingResult</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.*</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.validation.Valid</span><span class="p">;</span>
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoControllerForm</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;/saludoform&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Hay que declarar un parámetro con el tipo usado en el modelo del formulario (UserData)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">saludoForm</span><span class="p">(</span><span class="n">UserData</span><span class="w"> </span><span class="n">userData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;formRegistro&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/saludoform&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">checkPersonInfo</span><span class="p">(</span><span class="nd">@ModelAttribute</span><span class="w"> </span><span class="nd">@Valid</span><span class="w"> </span><span class="n">UserData</span><span class="w"> </span><span class="n">userData</span><span class="p">,</span><span class="w"> </span><span class="n">BindingResult</span><span class="w"> </span><span class="n">bindingResult</span><span class="p">,</span><span class="w"> </span><span class="n">Model</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bindingResult</span><span class="p">.</span><span class="na">hasErrors</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;formRegistro&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">model</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;mensaje&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="n">userData</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;saludo&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El método que recibe la petición en <code>/saludoform</code> simplemente devuelve
+la plantilla con el formulario. </p>
+<p>Y el método que recibe los datos es el que responde a la petición
+<code>POST</code> en la URL <code>/saludoform</code> recibe los datos del formulario en un
+objeto Java del tipo del modelo del formulario (el parámetro
+<code>userData</code>). Las anotaciones <code>@ModelAttribute</code> y <code>@Valid</code> indican que
+es un objeto recogido en el formulario sobre el que se ha realizado
+una validación. Se detecta si ha habido algún error en el método
+<code>hasErrors()</code> del <code>bindingResult</code> que se recibe también como
+parámetro. </p>
+<p>Si ha habido error, se vuelve a devolver el formulario para
+que se vuelva a completar. Si no ha habido error se obtiene el nombre
+introducido en el formulario y se pasa a la plantilla del saludo.</p>
+<h3 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h3>
+<p>A partir de Spring Boot 2.4 se usa JUnit 5 como librería de tests.</p>
+<p>En la aplicación de demostración hay varios ejemplos que muestran
+posibles formas de realizar pruebas en una aplicación Spring Boot.</p>
+<p>Spring Boot incluye el framework
+<a href="https://assertj.github.io/doc/">AssertJ</a> que permite realizar
+expresiones de prueba con un lenguaje muy expresivo.</p>
+<p>Los tests se pueden ejecutar usando el comando típico de Maven:</p>
+<div class="highlight"><pre><span></span><code>$ mvn test
+</code></pre></div>
+<p>O también, usando el comando de Maven Wrapper:</p>
+<div class="highlight"><pre><span></span><code>$ ./mvnw test
+</code></pre></div>
+<p>También se pueden lanzar desde el propio IntelliJ, pulsando en el
+panel del proyecto sobre el directorio de tests con el botón
+derecho. Los tests se lanzarán y aparecerá un panel en el que se
+mostrará si pasan correctamente (verde) o no.</p>
+<p><img src="imagenes/tests-intellij.png" width="600px" /></p>
+<h4 id="tests-sobre-clases-de-servicio">Tests sobre clases de servicio<a class="headerlink" href="#tests-sobre-clases-de-servicio" title="Permanent link">&para;</a></h4>
+<p>Podemos realizar pruebas sobre la capa de servicio, obteniendo una
+instancia del servicio mediante inyección de dependencias.</p>
+<p>En el siguiente ejemplo se muestra cómo se prueba el método de
+servicio <code>saluda</code>.</p>
+<p><strong>Fichero <code>src/test/java/demoapp/ServiceTest.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">demoapp.service.SaludoService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.assertj.core.api.Assertions.assertThat</span><span class="p">;</span>
+
+<span class="nd">@SpringBootTest</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ServiceTest</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">saludo</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">contexLoads</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">assertThat</span><span class="p">(</span><span class="n">saludo</span><span class="p">).</span><span class="na">isNotNull</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">serviceSaludo</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">assertThat</span><span class="p">(</span><span class="n">saludo</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="s">&quot;Domingo&quot;</span><span class="p">)).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="s">&quot;Hola Domingo&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="tests-sobre-capa-web">Tests sobre capa web<a class="headerlink" href="#tests-sobre-capa-web" title="Permanent link">&para;</a></h4>
+<p>Es posible realizar tests sobre la capa de presentación sin lanzar
+realmente el servidor web ni ejecutar realmente las peticiones
+HTTP. Se obtiene por inyección de dependencias un <em>mock</em> de
+la clase <code>MockMvc</code> y se usan métodos como <code>perform(get("/"))</code> o
+<code>perform(post("/saludoform").param("nombre", "Domingo"))</code>.</p>
+<p>En el primer test del ejemplo siguiente se comprueba que una petición
+<code>GET</code> a la URL <code>/</code> devuelve un código HTTP OK (200) y una página HTML
+con la cadena esperada.</p>
+<p>En este test lo único que se moquea es el servidor web, y se ejecuta
+el código real del servicio, del controlador y de la plantilla.</p>
+<p>Se utilizan los métodos <code>andDo</code> y <code>andExpect</code> de la propia librería de
+testeo de Spring Framework y el método <code>conteainsString</code> de la
+librería de testeo <a href="http://hamcrest.org/JavaHamcrest/tutorial">Hamcrest</a>.</p>
+<p>En el segundo test se realiza una petición <code>POST</code> para comprobar que
+el formulario funciona correctamente.</p>
+<p><strong>Fichero <code>src/test/demoapp/MockMvcTest.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.MockMvc</span><span class="p">;</span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.hamcrest.Matchers.containsString</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.result.MockMvcResultMatchers.content</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.result.MockMvcResultMatchers.status</span><span class="p">;</span>
+
+<span class="nd">@SpringBootTest</span>
+<span class="nd">@AutoConfigureMockMvc</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MockMvcTest</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MockMvc</span><span class="w"> </span><span class="n">mockMvc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Hacemos una petición GET a un end point y comprobamos que</span>
+<span class="w">    </span><span class="c1">// el HTML resultante es correcto</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">shouldReturnDefaultMessage</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">)));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Podemos hacer también una petición POST y pasar los datos</span>
+<span class="w">    </span><span class="c1">// del formulario con el método .param</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postShoudReturnCorrectResponse</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">post</span><span class="p">(</span><span class="s">&quot;/saludoform&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">param</span><span class="p">(</span><span class="s">&quot;nombre&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Domingo&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Domingo&quot;</span><span class="p">)));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>También es posible realizar un test únicamente del controlador y la
+plantilla de presentación, moqueando el servicio. Se muestra en el
+fichero <code>MockServiceTest</code>.</p>
+<p><strong>Fichero <code>src/test/demoapp/MockServiceTest.java</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">demoapp</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">demoapp.service.SaludoService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.test.mock.mockito.MockBean</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.MockMvc</span><span class="p">;</span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.hamcrest.Matchers.containsString</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.mockito.Mockito.when</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.result.MockMvcResultMatchers.content</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.springframework.test.web.servlet.result.MockMvcResultMatchers.status</span><span class="p">;</span>
+
+<span class="nd">@SpringBootTest</span>
+<span class="nd">@AutoConfigureMockMvc</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MockServiceTest</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MockMvc</span><span class="w"> </span><span class="n">mockMvc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Podemos también mockear el servicio</span>
+<span class="w">    </span><span class="nd">@MockBean</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SaludoService</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">greetingShouldReturnMessageFromService</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Y especificar lo que debe devolver una llamada a uno de sus métodos</span>
+<span class="w">        </span><span class="n">when</span><span class="p">(</span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="s">&quot;Domingo&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;Hola Mock Domingo&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;/saludo/Domingo&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Mock Domingo&quot;</span><span class="p">)));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="5-referencias">5. Referencias<a class="headerlink" href="#5-referencias" title="Permanent link">&para;</a></h2>
+<p>Puedes encontrar la documentación de referencia de Spring Boot y
+Spring en las siguientes páginas, en la pestaña <em>Learn</em>:</p>
+<ul>
+<li><a href="https://spring.io/projects/spring-boot">Spring Boot</a></li>
+<li><a href="https://spring.io/projects/spring-framework">Spring</a> </li>
+</ul>
+<p>También podemos encontrar también una extensa cantidad de tutoriales y guías
+rápidas en la web de Spring, en la url
+<a href="https://spring.io/guides">https://spring.io/guides</a>.</p>
+<p>En concreto, hemos usado las siguientes referencias para construir
+esta primera aplicación ejemplo:</p>
+<ul>
+<li><a href="https://spring.io/guides/gs/spring-boot/">Building an Application with Spring Boot</a></li>
+<li><a href="https://spring.io/guides/gs/serving-web-content/">Serving Web Content with Spring  MVC</a></li>
+<li><a href="https://spring.io/guides/gs/handling-form-submission/">Handling Form Submission</a></li>
+<li><a href="https://spring.io/guides/gs/validating-form-input/">Validating Form Input</a></li>
+<li>Spring Boot Reference Guide 2.6.10
+  (<a href="https://docs.spring.io/spring-boot/docs/2.6.10/reference/htmlsingle/">HTML</a>, <a href="https://docs.spring.io/spring-boot/docs/2.6.10/reference/pdf/spring-boot-reference.pdf">PDF</a>)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

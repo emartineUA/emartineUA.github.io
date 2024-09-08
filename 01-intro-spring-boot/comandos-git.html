@@ -1,0 +1,896 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="intro-spring-boot.html">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Resumen de comandos Git - Prácticas MADS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resumen-de-comandos-git" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Prácticas MADS" class="md-header__button md-logo" aria-label="Prácticas MADS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Prácticas MADS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resumen de comandos Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Prácticas MADS" class="md-nav__button md-logo" aria-label="Prácticas MADS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Prácticas MADS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Práctica 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Práctica 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enunciado de la práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro-spring-boot.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Spring Boot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Resumen de comandos Git
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="comandos-git.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Resumen de comandos Git
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-comandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Comandos básicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modificar-la-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Modificar la historia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mas-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Más información
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-comandos-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Comandos básicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modificar-la-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Modificar la historia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mas-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Más información
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="resumen-de-comandos-git">Resumen de comandos Git<a class="headerlink" href="#resumen-de-comandos-git" title="Permanent link">&para;</a></h1>
+<p>Comandos principales para trabajar con Git de forma individual. Los
+comandos relacionados con el trabajo en equipo los veremos en la
+práctica 2.</p>
+<p>Al final del documento se incluyen enlaces a apartados del libro
+<a href="https://git-scm.com/book/en/v2"><strong>Pro Git</strong></a>. Es un libro totalmente
+recomendable, deberías bajártelo y guardarlo como material de
+aprendizaje y de referencia. Está disponible de forma gratuita en
+múltiples versiones (PDF, eBook, HTML y mobi).</p>
+<h2 id="1-comandos-basicos">1. Comandos básicos<a class="headerlink" href="#1-comandos-basicos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Configurar el usuario y dirección de correo en git:</p>
+<div class="highlight"><pre><span></span><code>$ git config --global user.name &quot;John Doe&quot;
+$ git config --global user.email johndoe@example.com
+</code></pre></div>
+</li>
+<li>
+<p>Inicializar git en un directorio:</p>
+<div class="highlight"><pre><span></span><code>$ cd /ruta/a/mi/directorio
+$ git config --global user.name &lt;nombre-usuario&gt;
+$ git config --global user.email &lt;email&gt;
+$ git init
+$ git add .
+$ git commit -m &quot;Versión inicial&quot;
+</code></pre></div>
+</li>
+<li>
+<p>Publicar por primera vez el repositorio local en el remoto (en GitHub):</p>
+<div class="highlight"><pre><span></span><code>$ git remote add origin &lt;url-repo&gt;.git
+$ git push -u origin main
+</code></pre></div>
+<p>El nombre del repositorio remoto será <code>origin</code> (nombre estándar
+del repositorio remoto en el caso en el que sólo haya
+uno). Subimos al repositorio la rama <code>main</code> (la rama por defecto
+que se crea al inicializar el repositorio local).</p>
+</li>
+<li>
+<p>Comprobar el estado del repositorio local: </p>
+<div class="highlight"><pre><span></span><code>$ git status
+</code></pre></div>
+</li>
+<li>
+<p>Comprobar las diferencias entre los ficheros modificados en el
+  directorio de trabajo y el último commit:</p>
+<div class="highlight"><pre><span></span><code>$ git diff
+</code></pre></div>
+</li>
+<li>
+<p>Añadir un fichero al
+  <a href="http://programmers.stackexchange.com/questions/119782/what-does-stage-mean-in-git"><em>stage</em></a>
+  (añadirlo para el próximo commit):</p>
+<div class="highlight"><pre><span></span><code>$ git add &lt;fichero o directorio&gt;
+</code></pre></div>
+<p>El área de <em>stage</em> también se llama el <em>index</em>. Es muy importante
+entender su funcionamiento para trabajar con Git. El siguiente
+dibujo muestra su funcionamiento:</p>
+<p><img src="imagenes/staging-area.png" width="400px"/></p>
+</li>
+<li>
+<p>Hacer un commit de los ficheros en el <em>stage</em>:</p>
+<div class="highlight"><pre><span></span><code>$ git commit -m &quot;Mensaje&quot;
+</code></pre></div>
+</li>
+<li>
+<p>Eliminar un fichero del <em>stage</em> (si lo hemos añadido, pero al final
+  decidimos no añadirlo en el siguiente commit):</p>
+<div class="highlight"><pre><span></span><code>$ git reset HEAD &lt;fichero&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Se puede combinar en un único comando el <code>add</code> y el <code>commit</code> en
+  ficheros ya añadidos al control de versiones:</p>
+<div class="highlight"><pre><span></span><code>$ git commit -a -m &quot;Mensaje&quot;
+</code></pre></div>
+<p>Se puede abreviar como </p>
+<div class="highlight"><pre><span></span><code>$ git commit -am &quot;Mensaje&quot;`
+</code></pre></div>
+</li>
+<li>
+<p>Deshacer un commit (sin perder los cambios que se han introducido en él):</p>
+<div class="highlight"><pre><span></span><code>$ git reset HEAD^
+</code></pre></div>
+<p>Los ficheros modificados seguirán estando en el directorio, con las
+modificaciones incluidas, pero fuera del área de <em>stage</em>. Para hacer un
+nuevo commit hay que volver a añadirlos haciendo <code>add</code>.</p>
+</li>
+<li>
+<p>Eliminar todos los cambios realizados en el directorio, volviendo al
+  último commit (¡Peligroso: perdemos todos los cambios del último commit!)</p>
+<div class="highlight"><pre><span></span><code>$ git reset --hard HEAD
+$ git clean -fd (si se ha añadido algún fichero)
+</code></pre></div>
+</li>
+<li>
+<p>Publicar los cambios en el repositorio remoto:</p>
+<div class="highlight"><pre><span></span><code>$ git push
+</code></pre></div>
+</li>
+<li>
+<p>Si hay commits en el repositorio remoto que queremos eliminar y cambiarlos por
+  los commits en el directorio local:</p>
+<div class="highlight"><pre><span></span><code>$ git push --force
+</code></pre></div>
+</li>
+<li>
+<p>Consultar los mensajes de los commits (toda la historia de la rama
+  actual). La opción <code>--oneline</code> muestra sólo la primera línea del
+  mensaje, la opción <code>--graph</code> muestra el grafo de dependencias y la
+  opción <code>--all</code>muestra el grafo completo, no sólo aquel en el que
+  estamos (<code>HEAD</code>).</p>
+<div class="highlight"><pre><span></span><code>$ git log [--oneline] [--graph] [--all]
+</code></pre></div>
+</li>
+<li>
+<p>Comprobar las diferencias entre dos commits:</p>
+<div class="highlight"><pre><span></span><code>$ git diff &lt;hash-previo&gt; &lt;hash-nuevo&gt;
+</code></pre></div>
+<p>Devuelve las cambios que se han introducido desde el commit
+identificado por <hash-previo> y hasta el <hash-nuevo>.</p>
+</li>
+</ul>
+<h2 id="2-ramas">2. Ramas<a class="headerlink" href="#2-ramas" title="Permanent link">&para;</a></h2>
+<p>Es muy importante entender que las ramas en Git son como etiquetas
+móviles. La rama en la que estamos se actualiza de posición cada vez
+que hacemos un nuevo commit. Git mantiene en la referencia <code>HEAD</code> la
+rama actual.</p>
+<p><img src="imagenes/ramas.png" width="500px"/></p>
+<ul>
+<li>
+<p>Crear una rama nueva:</p>
+<div class="highlight"><pre><span></span><code>$ git checkout -b nueva-rama
+M   hola.txt (si hay cambios en el espacio de trabajo se llevan a la nueva rama)
+Switched to a new branch &#39;nueva-rama&#39;
+</code></pre></div>
+</li>
+<li>
+<p>Listar todas las ramas de un repositorio (incluyendo ramas remotas)</p>
+<div class="highlight"><pre><span></span><code>$ git branch -av
+main
+* nueva-rama
+$ git commit -a -m &quot;Confirmamos los cambios en la nueva rama&quot;
+</code></pre></div>
+</li>
+<li>
+<p>Moverse a otra rama:</p>
+<div class="highlight"><pre><span></span><code>$ git checkout main
+Switched to branch &#39;main&#39;
+</code></pre></div>
+</li>
+<li>
+<p>Mostrar un fichero de una rama (o commit) dado:</p>
+<div class="highlight"><pre><span></span><code>$ git show &lt;commit o rama&gt;:&lt;nombre-fichero&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Comparar dos ramas:</p>
+<div class="highlight"><pre><span></span><code>$ git diff main nueva-rama
+</code></pre></div>
+<p>El comando <code>git diff main nueva-rama</code> devuelve las diferencias
+entre las ramas <code>main</code> y <code>nueva-rama</code>: las modificaciones que
+resultarían de mezclar la rama <code>nueva-rama</code> en la rama <code>main</code>.</p>
+</li>
+<li>
+<p><strong><em>Merge</em> de ramas</strong>: Mezclar la rama <code>nueva-rama</code> en la rama <code>main</code> (añade a la <code>main</code> los commits adicionales de la rama <code>nueva-rama</code>):</p>
+<div class="highlight"><pre><span></span><code>$ git checkout main
+$ git merge [--no-ff] nueva-rama -m &quot;Mensaje de commit&quot;
+</code></pre></div>
+<p>La opción <code>--no-ff</code> no hace un fast forward y mantiene separados
+los commits de la rama en el log de commits. Es útil para revisar
+la historia del repositorio.</p>
+</li>
+<li>
+<p>Si en la rama que se mezcla y en la actual hay cambios que afectan a
+  las mismas líneas de un fichero, git detecta un conflicto y combina
+  esas líneas conservando las dos versiones y añadiendo la información
+  de la procedencia. Debemos resolver el conflicto: editarlos a mano y
+  volver a hacer add y commit.</p>
+<div class="highlight"><pre><span></span><code>$ git merge nueva-rama
+CONFLICT (content): Merge conflict in hola.txt  
+Automatic merge failed; fix conflicts and then commit the result.  
+# editar a mano el fichero con conflictos
+$ git commit -a -m &quot;Arreglado el conflicto en el merge&quot;
+$ git merge nueva-rama
+</code></pre></div>
+<p>El comando <code>git status</code> después de un merge nos indica qué
+ficheros no se han mezclado y hay que editar manualmente.</p>
+</li>
+<li>
+<p><strong><em>Rebase</em> de una rama</strong>. Si la rama main ha avanzado después de
+  separar una rama alternativa y queremos incorporar esos cambios en
+  la rama alternativa podemos hacer un <code>git rebase</code>:</p>
+<div class="highlight"><pre><span></span><code>$ git checkout -b experiment
+# hacemos cambios
+$ git commit -m &quot;Cambios en experiment&quot;
+$ git checkout main  
+# hacemos cambios  
+$ git commit -a -m &quot;Cambios en main&quot;  
+$ git checkout experiment
+$ git rebase main  
+First, rewinding head to replay your work on top of it...  
+Applying: Corregido bug1  
+Applying: Corregido bug2
+</code></pre></div>
+<p><img src="imagenes/rebase.png" width="600px"></p>
+<p>El comando cambia la historia de la rama: primero la mueve al
+final de la rama main (<em>rewind head</em>) y a partir de ahí aplica
+los cambios propios de la rama.</p>
+<div class="admonition danger">
+<p class="admonition-title">¡Cuidado!</p>
+<p>No se debe hacer un <em>rebase</em> de commits que
+existan en otros repositorios locales de compañeros. Al volver a
+aplicar los commits sobre los commits rebobinados, se cambia su
+número de hash (identificador) y se convierten en commits
+distintos.</p>
+</div>
+<p>Una vez que hemos hecho el <em>rebase</em> ya podemos añadir mover la
+rama <code>main</code> y tener una historia lineal:</p>
+<div class="highlight"><pre><span></span><code>$ git checkout main
+$ git merge nueva-rama
+# Borramos la rama una vez mezclada
+$ git branch -d nueva-rama
+</code></pre></div>
+</li>
+<li>
+<p>Igual que en el <em>merge</em>, al hacer un rebase pueden aparecer
+  conflictos al hacer el <em>rebase</em>, basta con modificar los ficheros
+  con conflictos, añadirlos y continuar el <em>rebase</em>:</p>
+<div class="highlight"><pre><span></span><code>$ git rebase main
+CONFLICT (content): Merge conflict in &lt;some-file&gt;
+# hacemos git status para comprobar donde están los conflictos
+$ git status
+# Unmerged paths:
+# (use &quot;git reset HEAD &lt;some-file&gt;...&quot; to unstage)
+# (use &quot;git add/rm &lt;some-file&gt;...&quot; as appropriate to mark resolution)
+#
+# Editamos los ficheros para corregir los conflictos
+$ git add &lt;some-file&gt;
+$ git rebase --continue
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Es posible integrar los cambios de una rama
+haciendo un <em>merge</em> o haciendo un <em>rebase</em>. Ambas estrategias son
+correctas y cada una tiene sus pros y contras. Nosotros vamos a
+usar ambas para aprender su funcionamiento.</p>
+</div>
+</li>
+<li>
+<p>Log en forma de grafo:</p>
+<div class="highlight"><pre><span></span><code>$ git log --graph --oneline 
+</code></pre></div>
+</li>
+<li>
+<p>Borrar una rama:</p>
+<div class="highlight"><pre><span></span><code>$ git branch -d nueva-rama  
+Deleted branch nueva-rama (was c241d7b)
+</code></pre></div>
+<p>Sólo podemos borrar de la forma anterior ramas en las que no
+estamos y que se han mezclado con alguna otra. El comando anterior
+no permite borrar ramas activas que tienen commits sin mezclar con
+otras.</p>
+</li>
+<li>
+<p>Borrar una rama descartando sus commits:</p>
+<div class="highlight"><pre><span></span><code>$ git branch -D rama
+</code></pre></div>
+</li>
+<li>
+<p>Subir una rama al repositorio remoto:</p>
+<div class="highlight"><pre><span></span><code>$ git push -u origin &lt;rama&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Descargar una rama del repositorio remoto (origin, por ejemplo, el
+  repositorio remoto por defecto)</p>
+<div class="highlight"><pre><span></span><code>$ git fetch 
+$ git checkout -b &lt;rama&gt; origin/&lt;rama&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Consultar ramas locales y conexiones repositorio remoto (origin, por ejemplo)</p>
+<div class="highlight"><pre><span></span><code>$ git remote show origin
+</code></pre></div>
+</li>
+<li>
+<p>Subir todas las ramas y etiquetas:</p>
+<div class="highlight"><pre><span></span><code>$ git push -u -all origin
+</code></pre></div>
+<p>Al poner la opción -u hacemos tracking del repositorio remoto y
+las referencias quedan almacenadas en el fichero de configuración
+.git/config. A partir de ahora sólo es necesario hacer <code>git push</code>
+para subir los cambios en cualquiera de las ramas presentes.</p>
+</li>
+<li>
+<p>Borrar una rama en repositorio remoto:</p>
+<div class="highlight"><pre><span></span><code>$ git push origin --delete &lt;branchName&gt;
+</code></pre></div>
+</li>
+</ul>
+<h2 id="3-modificar-la-historia">3. Modificar la historia<a class="headerlink" href="#3-modificar-la-historia" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Modificar el mensaje del último commit. Se abrirá un editor en el
+  que modificar el mensaje. También se puede escribir el mensaje a
+  mano:</p>
+<div class="highlight"><pre><span></span><code>$ git commit --amend [--m &quot;Nuevo mensaje&quot;]
+</code></pre></div>
+</li>
+<li>
+<p>Deshacer el último commit (sólo la acción del commit, dejando los cambios en el <em>stage</em>):</p>
+<div class="highlight"><pre><span></span><code>$ git reset --soft HEAD^
+</code></pre></div>
+</li>
+<li>
+<p>Descartar el último merge y volver a la situación anterior al hacer el merge:</p>
+<div class="highlight"><pre><span></span><code>$ git reset --merge ORIG_HEAD
+</code></pre></div>
+</li>
+<li>
+<p>Movernos atrás a un commit pasado, mirar los ficheros, crear una
+  nueva rama allí (o no) y volver al commit actual:</p>
+<div class="highlight"><pre><span></span><code>$ git checkout &lt;hash&gt; (o tag, por ejemplo v2.0)
+You are in &#39;detached HEAD&#39; state.
+# Ahora estás en un detached HEAD
+$ git branch
+* (HEAD detached at 594b606)
+main
+$ git checkout -b v2.0.1
+Switched to a new branch &#39;v2.0.1&#39;
+$ git branch
+main
+* v2.0.1
+$ git checkout main
+</code></pre></div>
+</li>
+<li>
+<p>Movernos atrás a un commit pasado, descartando todos los commits
+  realizados después (<strong>peligroso</strong>)</p>
+<div class="highlight"><pre><span></span><code>$ git reset --hard &lt;hash&gt;
+</code></pre></div>
+</li>
+</ul>
+<h2 id="4-mas-informacion">4. Más información<a class="headerlink" href="#4-mas-informacion" title="Permanent link">&para;</a></h2>
+<p>Puedes encontrar más información en los siguientes documentos:</p>
+<ul>
+<li><em>Pro Git</em> - <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">Recording Changes to the Repository</a></li>
+<li><em>Pro Git</em> - <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">Basic Branching and Merging</a></li>
+<li><em>Pro Git</em> - <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">Git Branching - Rebasing</a></li>
+<li>Tutorial de Atlassian - <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Merging vs. Rebasing</a></li>
+<li><em>Pro Git</em> - <a href="https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified">Reset Demystified</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
