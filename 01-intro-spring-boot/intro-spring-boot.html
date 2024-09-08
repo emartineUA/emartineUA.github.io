@@ -688,7 +688,7 @@ el proyecto como un ZIP con la estructura de directorios y el POM
 ya configurados. </p>
 <p>Nosotros vamos a hacerlo más fácil todavía usando una aplicación
 ejemplo en GitHub
-<a href="https://github.com/domingogallardo/spring-boot-demoapp">domingogallardo/spring-boot-demoapp</a>. </p>
+<a href="https://github.com/emartineUA/spring-boot-demoapp">emartineUA/spring-boot-demoapp</a>. </p>
 <p>La aplicación es un sencillo <code>Hola mundo</code>. En los siguientes apartados
 explicamos cómo lanzarla y cómo funciona.</p>
 <h2 id="2-ejecucion-de-aplicaciones-spring-boot">2. Ejecución de aplicaciones Spring Boot<a class="headerlink" href="#2-ejecucion-de-aplicaciones-spring-boot" title="Permanent link">&para;</a></h2>
@@ -1005,7 +1005,7 @@ diccionario (la variable <code>model</code> que recibe como parámetro):</p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="formularios-y-validacion">Formularios y validación<a class="headerlink" href="#formularios-y-validacion" title="Permanent link">&para;</a></h3>
-<p>Spring Boor simplifica la declaración y validación de formularios
+<p>Spring Boot simplifica la declaración y validación de formularios
 usando clases Java que trabajan como modelos del formulario. Por
 ejemplo, en la aplicación se define la clase <code>UserData</code>:</p>
 <p><strong>Fichero <code>src/main/java/demoapp/controller/UserData.java</code></strong></p>
@@ -1163,7 +1163,7 @@ servicio <code>saluda</code>.</p>
 realmente el servidor web ni ejecutar realmente las peticiones
 HTTP. Se obtiene por inyección de dependencias un <em>mock</em> de
 la clase <code>MockMvc</code> y se usan métodos como <code>perform(get("/"))</code> o
-<code>perform(post("/saludoform").param("nombre", "Domingo"))</code>.</p>
+<code>perform(post("/saludoform").param("nombre", "Ester"))</code>.</p>
 <p>En el primer test del ejemplo siguiente se comprueba que una petición
 <code>GET</code> a la URL <code>/</code> devuelve un código HTTP OK (200) y una página HTML
 con la cadena esperada.</p>
@@ -1210,9 +1210,9 @@ el formulario funciona correctamente.</p>
 <span class="w">    </span><span class="nd">@Test</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postShoudReturnCorrectResponse</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">post</span><span class="p">(</span><span class="s">&quot;/saludoform&quot;</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="na">param</span><span class="p">(</span><span class="s">&quot;nombre&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Domingo&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">param</span><span class="p">(</span><span class="s">&quot;nombre&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ester&quot;</span><span class="p">))</span>
 <span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
-<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Domingo&quot;</span><span class="p">)));</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Ester&quot;</span><span class="p">)));</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1252,11 +1252,11 @@ fichero <code>MockServiceTest</code>.</p>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">greetingShouldReturnMessageFromService</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">        </span><span class="c1">// Y especificar lo que debe devolver una llamada a uno de sus métodos</span>
-<span class="w">        </span><span class="n">when</span><span class="p">(</span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="s">&quot;Domingo&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;Hola Mock Domingo&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">when</span><span class="p">(</span><span class="n">service</span><span class="p">.</span><span class="na">saluda</span><span class="p">(</span><span class="s">&quot;Ester&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;Hola Mock Ester&quot;</span><span class="p">);</span>
 
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;/saludo/Domingo&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mockMvc</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;/saludo/Ester&quot;</span><span class="p">))</span>
 <span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
-<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Mock Domingo&quot;</span><span class="p">)));</span>
+<span class="w">                </span><span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">string</span><span class="p">(</span><span class="n">containsString</span><span class="p">(</span><span class="s">&quot;Hola Mock Ester&quot;</span><span class="p">)));</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
